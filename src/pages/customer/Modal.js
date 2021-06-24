@@ -65,6 +65,11 @@ export default function Modal(props) {
         ...prev,
         image: e.target.files,
       }));
+    } else if (e.target.name === "phone") {
+      setData((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value.replace(/[^0-9]/gm, ""),
+      }));
     } else {
       setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     }
